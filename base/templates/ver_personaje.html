@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Ver personaje
+{% endblock title_head %}
+{% block h1_header %}{% endblock h1_header %}
+{% block main %}
+<div class="verlibro">
+    <ul class="customlist">
+        {% if object.perfil %}
+            <li><img src="{{ object.perfil.url }}" alt="Perfil del personaje" style="width:200px; height:auto;"></li>
+        {% endif %}
+        <li>Libro: {{ object.libro }}</li>
+        <li>Personaje: {{ object.nombre }}</li>
+        <li><a href="{% url 'ver_mas' object.id %}" class="sinopsis-link">Ver más</a></li>
+    </ul>
+</div>
+{% endblock main %}

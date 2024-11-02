@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title_head %}
+About me 
+{% endblock title_head %}
+{% block h1_header %}
+{% endblock h1_header %}
+
+{% block main %}
+        <div class="aboutme">
+            <div class="aboutme-content">
+                <section class="aboutme-image">
+                    <img src="{% static 'assets/img/foto.png' %}" alt="Descripción de la imagen" width="500" height="500">
+                </section>
+                <section class="aboutme-text">
+                    <h2 class="aboutme-titulos">Angela Fernandez</h2>
+                    <p class="texto">Soy Angela y esta es mi página dedicada a escritores. Soy estudiante de licenciatura en biotecnología, apasionada por la química, la lectura y la programación.</p>
+
+                    <h2 class="aboutme-titulos">Proyectos actuales</h2>
+                    <p class="texto">Actualmente estoy aprendiendo Python en CoderHouse y SQL online para profundizar mis conocimientos en la programación.</p>
+                    
+                    <h3 class="aboutme-despedida" >Gracias por visitar mi página</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/angela__fernandezz">
+                            <img src="{% static 'assets/ico/instagram2.ico' %}" alt="Instagram" width="40px">
+                        </a>
+                        <a href="https://github.com/http-angelafernandez">
+                            <img src="{% static 'assets/ico/github2.ico' %}" alt="GitHub" width="40px">
+                        </a>
+                    </div>
+                </section>
+            </div>
+</div>
+{% endblock main %}
+
+

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Editar personaje 
+{% endblock title_head %}
+{% block h1_header %} {% endblock h1_header %}
+{% block main %}
+
+<div class="formulario-personaje">
+    <form action="{% url 'editar_personaje' personaje.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form }}
+
+        <input type="submit" value="Editar">
+    </form> 
+</div>
+
+
+
+{% endblock main %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Crear personaje
+{% endblock title_head %}
+{% block h1_header %} {% endblock h1_header %}
+{% block main %}
+
+<div class="formulario-personaje">
+    <form action="{% url 'crear_personaje' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+         {{ form.as_p }} 
+
+        <input type="submit" value="Crear">
+    </form> 
+</div>
+
+
+
+{% endblock main %}

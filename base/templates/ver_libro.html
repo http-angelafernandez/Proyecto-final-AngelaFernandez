@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Ver libro
+{% endblock title_head %}
+{% block h1_header %}{% endblock h1_header %}
+{% block main %}
+<div class="verlibro">
+    <ul class="customlist">
+        {% if libro.portada %}
+            <li><img src="{{ libro.portada.url }}" alt="Portada del libro" style="width:200px; height:auto;"></li>
+        {% endif %}
+        <li>Título: {{ libro.titulo }}</li>
+        <li>Autor: {{ libro.autor }}</li>
+        <li><a href="{% url 'ver_sinopsis' libro.pk %}" class="sinopsis-link">Ver sinopsis</a></li>
+    </ul>
+</div>
+{% endblock main %}
+

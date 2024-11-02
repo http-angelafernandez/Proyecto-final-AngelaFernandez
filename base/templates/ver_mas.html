@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title_head %}
+Ver descripcion
+{% endblock title_head %}
+
+{% block h1_header %}
+{% endblock h1_header %}
+
+{% block main %}
+<div class="vermas">
+    {% if object.perfil %}
+        <img src="{{ object.perfil.url }}" alt="Perfil del personaje" style="width:200px; height:auto;">
+    {% endif %}
+    <p>
+        Libro: {{ personaje.libro }}<br>
+        Alias: {{ personaje.alias }}<br>
+        Género: {{ personaje.genero }}<br>
+        Edad: {{ personaje.edad }}<br>
+        Nacimiento: {{ personaje.nacimiento }}<br>
+        Ocupación: {{ personaje.ocupacion }}<br>
+        Estado: {{ personaje.estado }}<br>
+        Parientes: {{ personaje.parientes }}<br>
+        Romances: {{ personaje.romances }}<br>
+        Descripcion: {{ personaje.descripcion }}<br>
+    </p>
+</div>
+{% endblock main %}

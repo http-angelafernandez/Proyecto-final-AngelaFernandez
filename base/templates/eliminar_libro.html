@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Eliminar libro
+{% endblock title_head %}
+{% block h1_header %}{% endblock h1_header %}
+{% block main %}
+
+<div class="formulario-eliminar">
+ <form action={% url "eliminar_libro" libro.id %} method="POST">
+    {% csrf_token %}
+    <p>¿Desea eliminar el libro "{{libro.titulo}}"?</p>
+    
+    <input type="submit" value="Confirmar">
+
+</form>
+</div> 
+
+{% endblock main %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Ver perfil
+{% endblock title_head %}
+{% block h1_header %}{% endblock h1_header %}
+{% block main %}
+<div class="verlibro">
+    <ul class="customlist">
+        {% if request.user.datosextra.avatar %}
+        <li><img src="{{ request.user.datosextra.avatar.url }}" alt="Avatar" style="width:200px; height:auto;"></li>
+        {% endif %}
+
+        <li>Nombre: {{ object.first_name }}</li>
+        <li>Apellido: {{ object.last_name }}</li>
+        <p class="aboutme-descripcion">{{ request.user.datosextra.descripcion }}</p> 
+        <li><a href="{% url 'usuarios:editar_perfil' %}" class="sinopsis-link">Editar</a></li>
+    </ul>
+</div>
+{% endblock main %}
+
+

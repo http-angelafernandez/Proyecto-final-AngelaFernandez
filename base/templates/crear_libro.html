@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Crear libro 
+{% endblock title_head %}
+{% block h1_header %} {% endblock h1_header %}
+{% block main %}
+
+<div class="formulario">
+    <form action="{% url 'crear_libro' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form }}
+
+        <input type="submit" value="Crear">
+    </form> 
+</div>
+
+
+
+{% endblock main %}
+
+
+

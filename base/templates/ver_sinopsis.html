@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %}
+Ver sinopsis
+{% endblock title_head %}
+{% block h1_header %}{% endblock h1_header %}
+{% block main %}
+<div class="versinopsis">
+    <p>{{ libro.sinopsis }}</p>
+</div>
+{% endblock main %}

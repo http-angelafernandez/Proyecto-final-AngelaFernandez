@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title_head %}
+        Storycraft
+        {% endblock title_head %}
+    </title>
+    {% block link_stylesheet_head %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% endblock link_stylesheet_head %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');>
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    {% block h1_header %}
+    <h1 class="titulo">Storycraft</h1>
+    {% endblock h1_header %}
+    {% block header %}
+    <header class="header">
+        <div class="logo"> 
+            <a href="{% url 'inicio' %}">
+                <img src="{% static 'assets/ico/logo.png' %}" alt="logo de la pag">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a class="navbar-brand" href={% url "crear_libro" %}>Crear libro</a></li>
+                <li><a class="navbar-brand" href={% url "listado_libros" %}>Libros</a></li>
+                <li><a class="navbar-brand" href={% url "crear_personaje" %}>Crear personaje</a></li>
+                <li><a class="navbar-brand" href={% url "listado_personajes" %}>Personajes</a></li>
+                <li><a class="navbar-brand" href={% url "about_me" %}>About me</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a class="navbar-brand" href="{% url 'usuarios:ver_perfil' pk=request.user.pk %}">Perfil</a></li>
+                <li>
+                    <form action="{% url 'usuarios:logout' %}" class="btn" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button class="btn">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'usuarios:login' %}" class="btn"><button>Login</button></a></li>
+                <li><a href="{% url 'usuarios:register' %}" class="btn"><button>Register</button></a></li>
+            {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% endblock header %}
+    <script src="{% static 'js/brillo.js' %}"></script>
+</body>
+</html>
+<main>
+{% block main %}{% endblock main %}
+ </main>
