@@ -6,7 +6,7 @@ class Libro(models.Model):
     portada = models.ImageField(upload_to='portadas', blank=True, null=False)
     titulo = models.CharField(max_length=50)
     autor = models.CharField(max_length=20)
-    sinopsis = models.TextField(max_length=600)
+    sinopsis = models.TextField(max_length=700)
     
 
     def __str__(self):
